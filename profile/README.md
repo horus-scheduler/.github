@@ -1,8 +1,10 @@
 ## Horus In-Network Scheduler
 
-This organization contains repositories for the project *"Horus"*, an In-network SFU [Network & Multimedia Systems Lab (NMSL)](https://nmsl.cs.sfu.ca/index.php/Network_and_Multimedia_Systems_Lab_%28NMSL%29). This work has been published in the following NSDI'24 paper:
+This organization contains repositories for the project *"Horus"* in-network task scheduler. This work has been published in the following NSDI'24 paper:
  
-> Horus: Granular In-Network Task Scheduler for Cloud Datacenters. Parham Yassini, Khaled Diab, Saeed Zangeneh, Mohamed Hefeeda. In Proc. of USENIX NSDI'24.
+> P. Yassini, K. Diab, S. Zanganeh, and M. Hefeeda, Horus: Granular In-Network Task Scheduler for Cloud Datacenters, In Proc. of USENIX Networked Systems Design and Implementation (NSDI'24), Sant Clara, CA, April 2024.
+
+For more information, check the webpage of the [Network & Multimedia Systems Lab (NMSL)](https://nmsl.cs.sfu.ca/) at Simon Fraser University (SFU): nmsl.cs.sfu.ca. 
 
 **Abstract:** Short-lived tasks are prevalent in modern interactive datacenter applications. However, designing schedulers to assign these tasks to workers distributed across the whole datacenter  is challenging, because such schedulers need to make decisions at a microsecond scale, achieve high throughput, and minimize the tail response time. Current task schedulers in the literature are limited to individual racks. We present Horus, a  new in-network task scheduler for short tasks that operates at  the datacenter scale. Horus efficiently tracks and distributes  the worker state among switches, which enables it to schedule  tasks in parallel at line rate while optimizing the scheduling quality. We propose a new distributed task scheduling policy that minimizes the state and communication overheads, handles dynamic loads, and does not buffer tasks in switches. We compare Horus against the state-of-the-art in-network scheduler in a testbed with programmable switches as well as using simulations of datacenters with more than 27K hosts and thousands of switches handling diverse and dynamic workloads. Our results show that Horus efficiently scales to large datacenters, and it substantially outperforms the state-of-the-art across all performance metrics, including tail response time and throughput.
 
