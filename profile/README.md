@@ -1,6 +1,6 @@
 ## Horus In-Network Scheduler
 
-This organization contains repositories for the project *"Horus"* in-network task scheduler. This work has been published in the following NSDI'24 paper:
+This is the repository for the *"Horus"* in-network task scheduler for datacenters, which is published in the following NSDI'24 paper:
  
 > P. Yassini, K. Diab, S. Zanganeh, and M. Hefeeda, Horus: Granular In-Network Task Scheduler for Cloud Datacenters, In Proc. of USENIX Networked Systems Design and Implementation (NSDI'24), Sant Clara, CA, April 2024.
 
