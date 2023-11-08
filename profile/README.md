@@ -6,37 +6,40 @@ This is the repository for the *"Horus"* in-network task scheduler for datacente
 
 For more information, check the webpage of the [Network & Multimedia Systems Lab (NMSL)](https://nmsl.cs.sfu.ca/) at Simon Fraser University (SFU). 
 
-**Abstract:** Short-lived tasks are prevalent in modern interactive datacenter applications. However, designing schedulers to assign these tasks to workers distributed across the whole datacenter  is challenging, because such schedulers need to make decisions at a microsecond scale, achieve high throughput, and minimize the tail response time. Current task schedulers in the literature are limited to individual racks. We present Horus, a  new in-network task scheduler for short tasks that operates at  the datacenter scale. Horus efficiently tracks and distributes  the worker state among switches, which enables it to schedule  tasks in parallel at line rate while optimizing the scheduling quality. We propose a new distributed task scheduling policy that minimizes the state and communication overheads, handles dynamic loads, and does not buffer tasks in switches. We compare Horus against the state-of-the-art in-network scheduler in a testbed with programmable switches as well as using simulations of datacenters with more than 27K hosts and thousands of switches handling diverse and dynamic workloads. Our results show that Horus efficiently scales to large datacenters, and it substantially outperforms the state-of-the-art across all performance metrics, including tail response time and throughput.
+**Abstract:** Short-lived tasks are prevalent in modern interactive datacenter applications. However, designing schedulers to assign these tasks to workers distributed across the whole datacenter is challenging, because such schedulers need to make decisions at a microsecond scale, achieve high throughput, and minimize the tail response time. Current task schedulers in the literature are limited to individual racks. We present Horus, a new in-network task scheduler for short tasks that operates at the datacenter scale. Horus efficiently tracks and distributes the worker state among switches, which enables it to schedule tasks in parallel at line rate while optimizing the scheduling quality. We propose a new distributed task scheduling policy that minimizes the state and communication overheads, handles dynamic loads, and does not buffer tasks in switches. We compare Horus against the state-of-the-art in-network scheduler in a testbed with programmable switches as well as using simulations of datacenters with more than 27K hosts and thousands of switches handling diverse and dynamic workloads. Our results show that Horus efficiently scales to large datacenters, and it substantially outperforms the state-of-the-art across all performance metrics, including tail response time and throughput.
 
 
 ## Overview 
-Horus scheduler is composed of multiple components: ... describe in a few lines with links 
+Horus scheduler project is composed of these 3 components:
 
 
-### Horus-P4
-Contains the P4 implementation of Horus for TNA architecture and instructions for getting started and running the experiments. This repository also contains the details of overall setup used in our experiments and plots that are presented in the paper. 
+### [Horus P4 Implementation](https://github.com/horus-scheduler/horus-p4)
+Contains the P4 implementation of Horus for TNA architecture and instructions for getting started and running the experiments. This repository also contains the details of the overall setup used in our experiments and plots that are presented in the paper.
 
-### Horus-App-Eval
-Contains the code that runs on end-hosts, it consists of client-side which is a load generator using DPDK and server-side worker codes which is a modified version of Shinjuku. Details of worker and application configurations (e.g., RocksDB Setup, worker ID assignments, and etc.) used in our experiments can be found under this repository.
+### [Horus Application Evaluation](https://github.com/horus-scheduler/horus-app-eval)
+Contains the code that runs on end-hosts, it consists of client-side which is a load generator using DPDK, and server-side worker codes which is a modified version of Shinjuku. Details of worker and application configurations (e.g., RocksDB Setup, worker ID assignments, etc.) used in our experiments can be found under this repository.
 
-### Horus-Controller
+### [Horus Controller](https://github.com/horus-scheduler/horus_controller)
 Contains the Horus control plane software written in Go, including the centralized controller and switch controller. 
 The details for topology configuration and initial table population (e.g., port setup, worker addresses) are provided in this repository. 
 
-
-Here is a video recording of testing Horus in a testbed with a Tofino 2 swithc. 
-
-
-## Testdrive Horus 
-We briefly describe how you run and test Hrous. 
+<!---
+Here is a video recording of testing Horus in a testbed with a Tofino 2 switch.
+-->
 
 ### Hardware Setup 
-mention some usual seyup 
 
-#### Deploy the Scheduler 
-xxxx 
+You need at least 2 machines for servers and 1 machine as the client, connected to a single Tofino switch which should be able to operate as both of the spine and leaf. All machines need to have DPDK compatible operating systems and NIC devices.
 
-### Test Someworkloads 
-.... 
+## Deploying Horus 
 
-what the users should look for 
+You can run Horus on your infrastructure to reproduce the results. For deploying Horus you need to do these overall steps:
+
+- Clone the P4 implementation on the switch and build it using TNA tools
+- Clone manager repository and build both controller and manager executables
+- Run the Horus compiled P4 application using the manager and controller
+- Build and run server applications on all the server machines
+- Build and run the client application on client machines
+
+A couple of reports would be generated by every invocation of the client applications. You can see the description of the output of each component in its repository's documentation. 
+
