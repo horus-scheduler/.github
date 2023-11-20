@@ -9,17 +9,17 @@ For more information, check the webpage of the [Network & Multimedia Systems Lab
 **Abstract:** Short-lived tasks are prevalent in modern interactive datacenter applications. However, designing schedulers to assign these tasks to workers distributed across the whole datacenter is challenging, because such schedulers need to make decisions at a microsecond scale, achieve high throughput, and minimize the tail response time. Current task schedulers in the literature are limited to individual racks. We present Horus, a new in-network task scheduler for short tasks that operates at the datacenter scale. Horus efficiently tracks and distributes the worker state among switches, which enables it to schedule tasks in parallel at line rate while optimizing the scheduling quality. We propose a new distributed task scheduling policy that minimizes the state and communication overheads, handles dynamic loads, and does not buffer tasks in switches. We compare Horus against the state-of-the-art in-network scheduler in a testbed with programmable switches as well as using simulations of datacenters with more than 27K hosts and thousands of switches handling diverse and dynamic workloads. Our results show that Horus efficiently scales to large datacenters, and it substantially outperforms the state-of-the-art across all performance metrics, including tail response time and throughput.
 
 
-Horus has two main components: Data Plane Scheduler and Control Plane.  
+Horus has two main components: the Data Plane Scheduler and the Control Plane.  
 
-### [Horus Data Plan: P4 Implementation](https://github.com/horus-scheduler/horus-p4)
-In Horus, network switches run the task scheduler. The schedulers are implemented in P4. This repository describes the P4 implementation as well as how to build and run the in-network schedulers. 
+### [Horus Data Plane: P4 Implementation](https://github.com/horus-scheduler/horus-p4)
+In Horus, network switches run the task scheduler. The schedulers are implemented in P4. This repository describes the P4 implementation and how to build and run the in-network schedulers. 
 
 ### [Horus Control Plane](https://github.com/horus-scheduler/horus_controller)
 The control plane of Horus contains a centralized controller and switch controller. Both of them are written in Go. 
-Thid repository describes the implementaion of the control plan and how to build and run Horus controllers. 
+This repository describes the implementation of the control plan and how to build and run Horus controllers. 
 
 ### [Runing Experiments and Reproducing the Results in the paper](https://github.com/horus-scheduler/horus-app-eval)
-This repostory describes how to setup the evaluation testbed described in the above paper. It also contains the scripts and the details steps to the experiments in the paper and reproduced the results. 
+This repository describes how to set up the evaluation testbed described in the above paper. It also contains the scripts and the detailed steps of the experiments in the paper and reproduces the results. 
 
 
 
