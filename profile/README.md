@@ -2,7 +2,7 @@
 
 This is the repository for the *"Horus"* in-network task scheduler for datacenters, which is published in the following NSDI'24 paper:
  
-> P. Yassini, K. Diab, S. Zanganeh, and M. Hefeeda, Horus: Granular In-Network Task Scheduler for Cloud Datacenters, In Proc. of USENIX Networked Systems Design and Implementation (NSDI'24), Sant Clara, CA, April 2024.
+> [P. Yassini, K. Diab, S. Zanganeh, and M. Hefeeda, Horus: Granular In-Network Task Scheduler for Cloud Datacenters, In Proc. of USENIX Networked Systems Design and Implementation (NSDI'24), Sant Clara, CA, April 2024.](https://www.usenix.org/conference/nsdi24/presentation/yassini)
 
 For more information, check the webpage of the [Network & Multimedia Systems Lab (NMSL)](https://nmsl.cs.sfu.ca/) at Simon Fraser University (SFU). 
 
