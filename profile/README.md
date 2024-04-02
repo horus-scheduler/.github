@@ -1,6 +1,6 @@
 ## Horus In-Network Scheduler
 
-This is the repository for the *"Horus"* in-network task scheduler for datacenters, which is published in the following NSDI'24 paper:
+This is the repository for *"Horus"*, an in-network task scheduler for datacenters, which is published in the following NSDI'24 paper:
  
 > [P. Yassini, K. Diab, S. Zanganeh, and M. Hefeeda, Horus: Granular In-Network Task Scheduler for Cloud Datacenters, In Proc. of USENIX Networked Systems Design and Implementation (NSDI'24), Sant Clara, CA, April 2024.](https://www.usenix.org/conference/nsdi24/presentation/yassini)
 
@@ -10,7 +10,7 @@ For more information, check the webpage of the [Network & Multimedia Systems Lab
 
 ---
 
-Horus has two main components: the Data Plane Scheduler and the Control Plane.  
+Horus has two main components: Data Plane Scheduler and Control Plane.  
 
 ### [Horus Data Plane: P4 Implementation](https://github.com/horus-scheduler/horus-p4)
 In Horus, network switches run the task scheduler. The schedulers are implemented in P4. This repository describes the P4 implementation and how to build and run the in-network schedulers. 
